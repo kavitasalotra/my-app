@@ -3,7 +3,6 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "airbnb",
     "plugin:prettier/recommended",
     "prettier/react",
     "prettier/standard"
@@ -37,4 +36,3 @@
     "Razorpay": true
   }
 }
-

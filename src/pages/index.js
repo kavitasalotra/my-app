@@ -1,17 +1,13 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import HomeHero from '../components/HomeHero';
 import Layout from '../components/Layout';
 
-const Home = () => {
+const Index = () => {
   return (
     <Layout>
-      {' '}
+      <HomeHero />
       <div className="flex min-h-screen flex-col items-center justify-center py-2">
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
           <h1 className="text-6xl font-bold">
             Welcome to{' '}
@@ -86,4 +82,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Index;
