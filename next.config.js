@@ -3,5 +3,5 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
 }
-
-module.exports = nextConfig
+const withYAML = require('next-yaml')
+module.exports = (withYAML(module.exports), nextConfig);
