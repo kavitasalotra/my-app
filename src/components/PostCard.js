@@ -6,13 +6,13 @@ const data = [
   {
     id: 1,
     image: "/images/home-image-1.webp",
-    title: 'Technology',
+    category: 'Technology',
     description: 'Architectural Engineering Wonders of the modern era for your Inspiration',
   },
   {
     id: 2,
     image: "/images/home-image-2.webp",
-    title: 'Lifestyle',
+    category: 'Lifestyle',
     description: '5 Effective Brain Recharging Activities No One is Talking About',
   },
 ]
@@ -72,22 +72,21 @@ const post = [
     dateTime: 'May 11, 2022',
   },
 ]
-
-const HomeHero = () => {
+const posts = () => {
   return (
     <div className="container  mx-auto px-8 py-6 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
       <div className="flex flex-row gap-11 items-center justify-center py-2 md:flex-cols flex-wrap ">
         {data.map((item) => (
-          <a href="#" className="bg-white rounded-lg border md:flex-col md:max-w-md  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+          <a href="#" className="bg-white rounded-lg  md:flex-col md:max-w-md  dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
             <div className="flex flex-col items-center">
               <div className="transition-transform duration-500 transform hover:scale-110 ">
                 <Image className="object-cover w-full rounded-t-lg md:h-472 md:w-265 md:rounded-none md:rounded-l-lg" src={item.image} alt=""
                   height={265} width={472} />
               </div>
             </div>
-            <div className="flex flex-col justify-between p-4 leading-normal">
-              <h5 className="mb-2 uppercase text-xs font-medium tracking-wider text-blue-600 dark:text-white">{item.title}</h5>
-              <p className="mb-3 font-semibold text-lg text-gray-800 dark:text-gray-400">{item.description}</p>
+            <div className="flex flex-col justify-between p-4 leading-normal ">
+              <h5 className="mb-2 uppercase text-xs font-medium tracking-wider text-blue-600 dark:text-white">{item.category}</h5>
+              <p className="mb-3 font-semibold text-lg text-gray-800 dark:text-gray-400 bg-white">{item.description}</p>
             </div>
             <div className="inline-flex p-4 items-center">
               <div className="flex items-center ">
@@ -151,4 +150,4 @@ const HomeHero = () => {
   );
 };
 
-export default HomeHero;
+export default posts;

@@ -1,15 +1,14 @@
 import React from 'react';
-import HomeHero from '../components/HomeHero';
+import PostCard from '../components/PostCard';
 import Layout from '../components/Layout';
-import About from '../components/About';
+
 
 const Index = () => {
   return (
     <Layout>
-      <HomeHero />
-      <About />
+      <PostCard />
     </Layout>
   );
 };
-
 export default Index;
+

@@ -1,7 +1,17 @@
-/** @type {import('next').NextConfig} */
+
+const withPlugins = require('next-compose-plugins');
+const withYAML = require('next-yaml');
+const withMDX = require('@next/mdx')({
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+    extension: /\.mdx?$/,
+  },
+})
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-}
-const withYAML = require('next-yaml')
-module.exports = (withYAML(module.exports), nextConfig);
+  pageExtensions: ['mdx', 'jsx', 'js'],
+};
+
+module.exports = withPlugins([withYAML, withMDX], nextConfig);
