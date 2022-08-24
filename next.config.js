@@ -1,13 +1,8 @@
 
 const withPlugins = require('next-compose-plugins');
 const withYAML = require('next-yaml');
-const withMDX = require('@next/mdx')({
-  options: {
-    remarkPlugins: [],
-    rehypePlugins: [],
-    extension: /\.mdx?$/,
-  },
-})
+const withMDX = require('@next/mdx')
+
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
