@@ -67,8 +67,8 @@ const Contact = () => {
                         text-neutral-800 text-base
                         border-gray-300
                         border-2
-                        hover:border-stone-500
-                        outline-none"
+                        outline-none
+                        focus:ring-4  focus:border-red-600 ring-red-100 dark:ring-0"
                     />
                   </div>
                   <div className="mb-6">
@@ -76,7 +76,7 @@ const Contact = () => {
                       type="email"
                       placeholder=" Email Address"
                       className="
-                      w-full
+                        w-full
                         rounded-md
                         py-3
                         px-4
@@ -84,16 +84,16 @@ const Contact = () => {
                         text-neutral-800 text-base
                         border-gray-300
                         border-2
-                        outline-none"
+                        outline-none
+                        focus:ring-4   focus:border-red-600 ring-red-100 dark:ring-0"
                     />
                   </div>
-
                   <div className="mb-6">
                     <textarea
                       rows="6"
                       placeholder="Your Message"
                       className="
-                      w-full
+                        w-full
                         rounded-md
                         py-3
                         px-4
@@ -101,8 +101,8 @@ const Contact = () => {
                         text-neutral-800 text-base
                         border-gray-300
                         border-2
-                        hover:outline-blue-400
-                        focus:outline-none"
+                        outline-none
+                        focus:ring-4  focus:border-red-600 ring-red-100 dark:ring-0"
                     ></textarea>
                   </div>
                   <div>
