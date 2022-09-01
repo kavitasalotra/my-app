@@ -12,7 +12,7 @@ import { postFilePaths, POSTS_PATH } from '../../../utils/mdxUtils'
 export default function PostPage({ source, frontMatter }) {
   return (
     <Layout>
-      <div className="container mx-auto px-8 py-6 lg:py-8 mx-auto xl:px-5 max-w-screen-lg post-header text-center">
+      <div className="container mx-auto px-8 py-4 lg:py-8 mx-auto xl:px-5 max-w-screen-lg post-header text-center">
         <div className="max-w-xl mx-auto ">
           <h1 className="text-blue-600">{frontMatter.category}</h1>
           <h2 className="text-3xl font-semibold my-4">{frontMatter.title}</h2>
@@ -46,10 +46,10 @@ export default function PostPage({ source, frontMatter }) {
           <div className="text-center">
             <a className="text-sky-500 inline-flex items-baseline  text-sm" href="/"><BsArrowLeft className="mr-2" /> View all post</a>
           </div>
-          <div className="bg-zinc-50 my-5 h-40 flex">
-            <div className="flex justify-center items-center">
+          <div className="bg-zinc-50 my-5 h-40 flex flex-wrap">
+            <div className="flex justify-center items-center flex-wrap">
               <a href="https://stackdiary.com/">
-                <div className=" mx-5">
+                <div className="mx-5">
                   <Image className="object-cover rounded-full" height={96} width={96} src={frontMatter.AuthorImage} alt="Featured Photo" />
                 </div>
               </a>
@@ -57,7 +57,7 @@ export default function PostPage({ source, frontMatter }) {
                 <a href="https://laravel.cm/articles/traquer-un-champ-validation-conditionelle-react-hook-form-5" className="group">
                   <h4 className="text-lg leading-6 text-neutral-800 group-hover:text-skin-primary">About {frontMatter.AuthorName}</h4>
                 </a>
-                <p className="mt-1 font-normal text-neutral-500 text-base leading-5" >
+                <p className="mt-1 font-normal text-neutral-500 text-xs  md:text-base mb-0 leading-5" >
                   {frontMatter.description}
                 </p>
               </div>
