@@ -1,6 +1,8 @@
 import React from 'react';
 import { HiOutlineLocationMarker, HiOutlineMail } from 'react-icons/hi';
 import { BiPhone } from 'react-icons/bi';
+import { useState } from 'react'
+
 
 const Contact = () => {
   return (
@@ -85,7 +87,7 @@ const Contact = () => {
                         border-gray-300
                         border-2
                         outline-none
-                        focus:ring-4   focus:border-red-600 ring-red-100 dark:ring-0"
+                        focus:ring-4  focus:border-red-600 ring-red-100 dark:ring-0"
                     />
                   </div>
                   <div className="mb-6">
@@ -130,6 +132,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+
   );
 };
 

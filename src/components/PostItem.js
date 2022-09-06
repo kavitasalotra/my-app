@@ -27,7 +27,7 @@ const PostItem = ({ item, isSmall, filePath }) => {
             <a className=" font-semibold text-lg text-gray-800 dark:text-gray-400 bg-white bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">{item.title}</a>
           </Link>
         </div>
-        <div className="p-2 ">
+        <div className="p-2">
           <div className="inline-flex items-center">
             <div className="flex items-center ">
               <div className="relative">
@@ -36,14 +36,14 @@ const PostItem = ({ item, isSmall, filePath }) => {
                 </div>
                 <span className="absolute top-0 right-0 inline-block w-3 h-3 bg-primary-red rounded-full"></span>
               </div>
-              <span className="mr-6 ml-3 lg:text-sm text-xs text-neutral-500">
+              <span className=" mx-0 sm:mr-6 sm:ml-3 lg:text-sm text-xs text-neutral-500">
                 {item.AuthorName}
               </span>
             </div>
             <div>
-              <span className=" text-gray-300 text-xs mr-3.5   items-center">•</span>
+              <span className=" text-gray-300 text-xs mr-3.5  items-center px-2">•</span>
               <p className="inline-block  whitespace-nowrap leading-tight rounded-xl">
-                <span className="text-sm  ml-3 text-neutral-500">
+                <span className="text-xs ml-3 text-neutral-500">
                   {item.dateTime}
                 </span>
               </p>

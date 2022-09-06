@@ -4,7 +4,7 @@ import about from '../../content/general/about.yaml'
 import { useState } from 'react'
 
 const About = () => {
-  const [active, setActive] = useState(false);
+  // const [active, setActive] = useState(false);
   return (
     <>
       {/* <button className="bg-gray-100 p-4" onClick={() =>
