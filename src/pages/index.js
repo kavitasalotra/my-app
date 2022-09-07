@@ -5,23 +5,11 @@ import fs from 'fs';
 import path from 'path'
 import matter from 'gray-matter';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
-import { useState, useEffect } from 'react';
-
 
 const Index = ({ posts }) => {
   // console.log(posts);
-  const [message, setMessage] = useState('Hi there, how are you?');
-  useEffect(() => {
-    console.log('trigger use effect hook');
-    setTimeout(() => {
-      setMessage("I'm fine, thanks for asking.");
-    }, 1000)
-  }, [message]);
   return (
     <Layout>
-      <div>
-        <p>{message}</p>
-      </div>
       <div className="container mx-auto px-7 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
         <div className="px-4 py-6 mt-5 flex flex-wrap">
           {posts && posts.map((item, index) =>
