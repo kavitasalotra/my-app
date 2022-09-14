@@ -1,8 +1,8 @@
-import React from 'react'
-import Layout from '../components/Layout'
-import ArchiveCard from '../components/ArchiveCard'
+import React from 'react';
+import Layout from '../components/Layout';
+import ArchiveCard from '../components/ArchiveCard';
 import fs from 'fs';
-import path from 'path'
+import path from 'path';
 import matter from 'gray-matter';
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils';
 
@@ -20,28 +20,33 @@ export const archive = ({ posts }) => {
             </p>
           </div>
           <div className="px-5 py-6 mt-5 flex flex-wrap">
-            {posts && posts.map((item) => <ArchiveCard key={item.filePath} item={item.data} filePath={item.filePath} />
-            )}
+            {posts &&
+              posts.map((item) => (
+                <PostItem
+                  key={item.filePath}
+                  item={item.data}
+                  filePath={item.filePath}
+                />
+              ))}
           </div>
         </div>
       </Layout>
     </>
-  )
-}
+  );
+};
 
 export default archive;
 
 export function getStaticProps() {
   const posts = postFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
-    const { content, data } = matter(source)
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
+    const { content, data } = matter(source);
 
     return {
       content,
       data,
       filePath,
-    }
-  })
-  return { props: { posts } }
+    };
+  });
+  return { props: { posts } };
 }
-
