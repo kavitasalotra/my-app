@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Footer = () => {
   return (
@@ -9,9 +9,11 @@ const Footer = () => {
       </div>
       <div className="text-gray-700 text-sm text-center">
         Made by
-        <a className="text-gray-700" href="https://tailwind-elements.com/">  Web3Templates</a>
+        <a className="text-gray-700" href="https://www.zeiq.co/">
+          zeiq.co
+        </a>
       </div>
     </footer>
-  )
-}
+  );
+};
 export default Footer;
