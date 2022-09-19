@@ -25,7 +25,7 @@ const PostItem = ({ item, isSmall, filePath }) => {
           </a>
         </Link>
         <div className="md:p-2 group ">
-          <Link href={`/category/${item.category.toLowerCase()}`}>
+          <Link href={`/category/${item?.category?.toLowerCase()}`}>
             <h5 className="mb-2 uppercase text-xs font-medium tracking-wider text-blue-600  dark:text-white">
               {item.category}
             </h5>

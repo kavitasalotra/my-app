@@ -8,12 +8,12 @@ import { useRouter } from 'next/router';
 import PostItem from '../../components/PostItem';
 export default function CategoryPage({ posts }) {
   const router = useRouter();
-  const category = router?.query?.slug?.trim();
+  const category = router?.query?.slug?.toLowerCase().trim();
   const filterPosts =
     posts && posts.length > 0
       ? posts.filter((item) => {
-          const data = item.data;
-          if (category === data.category.toLowerCase().trim()) {
+          const data = item?.data;
+          if (category === data?.category?.toLowerCase().trim()) {
             return item;
           }
         })
@@ -24,7 +24,7 @@ export default function CategoryPage({ posts }) {
       <div className="container mx-auto px-7 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
         <div className="px-4 py-6 mt-5 flex flex-wrap">
           {filterPosts &&
-            filterPosts.map((item, index) => (
+            filterPosts.map((item) => (
               <PostItem
                 key={item.filePath}
                 item={item.data}
@@ -70,6 +70,5 @@ export function getServerSideProps() {
       filePath,
     };
   });
-
   return { props: { posts } };
 }

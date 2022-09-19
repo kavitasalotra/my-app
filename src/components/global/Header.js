@@ -105,12 +105,12 @@ const Header = () => {
                       Archive
                     </a>
                   </Link>
-                  <Link href="/">
+                  <Link href="https://github.com/kavitasalotra/my-app">
                     <a className=" text-gray-600  hover:text-blue-400 px-5 py-2 rounded-md text-sm font-medium">
                       Github
                     </a>
                   </Link>
-                  <Link href="https://web3templates.com/templates/stablo-minimal-blog-website-template">
+                  <Link href="https://github.com/kavitasalotra/my-app">
                     <a className=" text-gray-600  hover:text-blue-400 px-5 py-2 rounded-md text-sm font-medium">
                       Download
                     </a>
