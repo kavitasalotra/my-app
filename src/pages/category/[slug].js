@@ -24,7 +24,7 @@ export default function CategoryPage({ posts }) {
       <div className="container mx-auto px-7 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
         <div className="px-4 py-6 mt-5 flex flex-wrap">
           {filterPosts &&
-            filterPosts.map((item) => (
+            filterPosts.map((item, index) => (
               <PostItem
                 key={item.filePath}
                 item={item.data}

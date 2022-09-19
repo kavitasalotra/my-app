@@ -95,6 +95,7 @@ export default function PostPage({ source, frontMatter }) {
 }
 
 export const getStaticProps = async ({ params }) => {
+  console.log(params);
   const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
   const source = fs.readFileSync(postFilePath);
   const { content, data } = matter(source);
