@@ -16,7 +16,7 @@ const PostItem = ({ item, isSmall, filePath }) => {
                 <Image
                   className="object-cover w-full rounded-lg md:h-472 md:w-265 md:rounded-none md:rounded-lg"
                   src={item.image}
-                  alt="blogimage"
+                  alt="blogImage"
                   height={isSmall ? 301 : 265}
                   width={isSmall ? 334 : 472}
                 />
@@ -26,9 +26,11 @@ const PostItem = ({ item, isSmall, filePath }) => {
         </Link>
         <div className="md:p-2 group ">
           <Link href={`/category/${item?.category?.toLowerCase()}`}>
-            <h5 className="mb-2 uppercase text-xs font-medium tracking-wider text-blue-600  dark:text-white">
-              {item.category}
-            </h5>
+            <a>
+              <h5 className="mb-2 uppercase text-xs font-medium tracking-wider text-blue-600  dark:text-white">
+                {item.category}
+              </h5>
+            </a>
           </Link>
           <Link href={href}>
             <a className=" font-semibold text-lg text-gray-800 dark:text-gray-400 bg-white bg-gradient-to-r from-green-200 to-green-100 dark:from-purple-800 dark:to-purple-900 bg-[length:0px_10px] bg-left-bottom bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_3px] group-hover:bg-[length:100%_10px]">

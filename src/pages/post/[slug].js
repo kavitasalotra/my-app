@@ -4,6 +4,7 @@ import { MDXRemote } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import { BsArrowLeft } from 'react-icons/bs';
 import Image from 'next/image';
+import Link from 'next/link';
 import path from 'path';
 import Layout from '../../components/Layout';
 import { postFilePaths, POSTS_PATH } from '../../../utils/mdxUtils';
@@ -13,7 +14,11 @@ export default function PostPage({ source, frontMatter }) {
     <Layout>
       <div className="container mx-auto px-8 py-4 lg:py-8 mx-auto xl:px-5 max-w-screen-lg post-header text-center">
         <div className="max-w-xl mx-auto ">
-          <h1 className="text-blue-600">{frontMatter.category}</h1>
+          <Link href="/">
+            <a>
+              <h1 className="text-blue-600">{frontMatter.category}</h1>
+            </a>
+          </Link>
           <h2 className="text-3xl font-semibold my-4">{frontMatter.title}</h2>
           <div className="flex items-center justify-center">
             <div className="flex items-center">

@@ -6,7 +6,8 @@ import matter from 'gray-matter';
 import { postFilePaths, POSTS_PATH } from '../../../utils/mdxUtils';
 import { useRouter } from 'next/router';
 import PostItem from '../../components/PostItem';
-export default function CategoryPage({ posts }) {
+
+export default function CategoryPage({ posts, frontMatter }) {
   const router = useRouter();
   const category = router?.query?.slug?.toLowerCase().trim();
   const filterPosts =
@@ -18,10 +19,11 @@ export default function CategoryPage({ posts }) {
           }
         })
       : [];
-  console.log('filterPosts', filterPosts);
+  // console.log('filterPosts', filterPosts);
   return (
     <Layout>
       <div className="container mx-auto px-7 py-5 lg:py-8 mx-auto xl:px-5 max-w-screen-lg">
+        <h1 className="sm:text-3xl font-semibold text-center"></h1>
         <div className="px-4 py-6 mt-5 flex flex-wrap">
           {filterPosts &&
             filterPosts.map((item) => (
@@ -37,27 +39,6 @@ export default function CategoryPage({ posts }) {
     </Layout>
   );
 }
-
-// export const getStaticProps = async ({ params }) => {
-//   const categoryFilePath = path.join(CATEGORY_PATH, `${params.slug}.mdx`);
-//   const source = fs.readFileSync(categoryFilePath);
-//   const { content, data } = matter(source);
-//   const mdxSource = await serialize(content, {
-//     // Optionally pass remark/rehype plugins
-//     mdxOptions: {
-//       remarkPlugins: [],
-//       rehypePlugins: [],
-//     },
-//     scope: data,
-//   });
-
-//   return {
-//     props: {
-//       source: mdxSource,
-//       frontMatter: data,
-//     },
-//   };
-// };
 
 export function getServerSideProps() {
   const posts = postFilePaths.map((filePath) => {
