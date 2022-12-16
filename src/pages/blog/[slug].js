@@ -1,18 +1,16 @@
 import groq from 'groq'
 import sanityClient from '../../../utils/client';
 
-const Post = ({blog}) => {
+const Post = ({}) => {
 
   return (
     <article>
-    {blog &&
-    blog.map((item) => <Card key={item._id}/>
- )}
+
     </article>
   )
 }
 
-const query = groq`*[_type == "post" && slug.current == $slug][0]{
+const query = groq`*[_type == "blog" && slug.current == $slug][0]{
 
 }`
 
