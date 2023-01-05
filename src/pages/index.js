@@ -34,6 +34,9 @@ function LogIn({ posts = [] }) {
                       <p className="text-gray-700 text-base">
                         {item.description}
                       </p>
+                       <p className="text-gray-700 text-base">
+                        {item.launchAt}
+                      </p>
                     </div>
                   </div>
                 </div>
