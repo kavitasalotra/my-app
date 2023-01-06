@@ -1,6 +1,7 @@
 import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
 import sanityClient from '../../utils/sanityClient';
+import Layout from '../components/Layout';
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -9,43 +10,41 @@ function urlFor(source) {
 }
 
 function LogIn({ posts = [] }) {
-
   console.log('posts', posts);
   return (
-    <div className="container mx-auto mt-10">
-      <div className="grid grid-cols-3">
-        {posts.map((item) => (
-          <div key={item._id} className="max-w-lg mx-auto">
-            <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
-              <a href={`/post/${item?.slug?.current || ''}`}>
-                <img
-                  className="rounded-t-lg"
-                  src={urlFor(item.image).width(450).url()}
-                  alt={item.title}
-                />
-              </a>
-              <div className="p-5">
-                <div>
-                  <div className="max-w-sm rounded overflow-hidden">
-                    <div className="px-6 py-4">
-                      <div className="font-bold text-xl mb-2">
-                      {item.title}
+    <Layout>
+      <div className="container mx-auto mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          {posts.map((item) => (
+            <div key={item._id}>
+              <div className="bg-white shadow-md border border-gray-200 rounded-lg max-w-sm mb-5">
+                <a href={`/post/${item?.slug?.current || ''}`}>
+                  <img
+                    className="rounded-t-lg"
+                    src={urlFor(item.image).width(650).height(380).url()}
+                    alt={item.title}
+                  />
+                </a>
+                <div className="p-5">
+                  <div>
+                    <div className="max-w-sm rounded overflow-hidden">
+                      <div className="px-6 py-4">
+                        <div className="font-bold text-sm mb-2">
+                          {item.title}
+                        </div>
+                        <p className="text-gray-700 text-lg font-semibold">
+                          {item.description}
+                        </p>
                       </div>
-                      <p className="text-gray-700 text-base">
-                        {item.description}
-                      </p>
-                       <p className="text-gray-700 text-base">
-                        {item.launchAt}
-                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 }
 export async function getStaticProps() {

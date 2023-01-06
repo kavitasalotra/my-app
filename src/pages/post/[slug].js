@@ -1,6 +1,8 @@
 import groq from 'groq';
 import imageUrlBuilder from '@sanity/image-url';
+import { PortableText } from '@portabletext/react';
 import client from '../../../utils/sanityClient';
+import Layout from '../../components/Layout';
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
@@ -8,12 +10,21 @@ function urlFor(source) {
 
 function Post({ post }) {
   return (
-    <article>
-      <img src={urlFor(post.image).width(600).url()} alt={post.title} />
-      <h1>{post.title}</h1>
-      <span> {post.content}</span>
-
-    </article>
+    <Layout>
+      <article className="container mx-auto">
+        <div className="text-center p-6 space-y-6">
+          <img
+            src={urlFor(post.image).width(900).url()}
+            alt={post.title}
+            className="inline-flex"
+          />
+          <h1 className=" text-lg font-semibold">{post.title}</h1>
+          <div className="mx-8 p-8 text-left">
+            <PortableText value={post.content} />
+          </div>
+        </div>
+      </article>
+    </Layout>
   );
 }
 

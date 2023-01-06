@@ -6,8 +6,7 @@ const PostItem = ({ item, isSmall, filePath }) => {
   const href = filePath ? `/post/${filePath.replace(/\.mdx?$/, '')}` : '';
   return (
     <div
-      className={isSmall ? 'md:w-4/12 w-full px-3' : 'md:w-6/12 w-full px-3'}
-    >
+      className={isSmall ? 'md:w-4/12 w-full px-3' : 'md:w-6/12 w-full px-3'}>
       <div className="bg-white shadow-none rounded-lg mb-5">
         <Link href={href}>
           <a>
